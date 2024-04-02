@@ -1,0 +1,59 @@
+site_name: RFC 2795
+site_url: https://devlog.github.io
+theme:
+  name: material
+  icon:
+    logo: material/console
+  palette: 
+    scheme: slate
+    primary: red
+    accent: white
+  font:
+    text: Nanum Gothic
+    code: Ubuntu Mono
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.footer
+    - navigation.instant
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.share
+    - search.highlight
+plugins:
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+      - categories
+      - tags
+  - blog:
+      blog_dir: .
+      blog_toc: true
+      authors: true
+      draft: true
+  - tags
+  - search
+extra:
+  social:
+    - icon: fontawesome/brands/mastodon
+      link: https://mastodon.social/@joshcodesstuff
+    - icon: fontawesome/brands/github
+      link: https://github.com/JoshCodesStuff
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
